@@ -13,7 +13,7 @@ const {TOKEN_SECRET} = process.env;
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
     try {
         const users: User[] = await model.index();
-        res.json(users);
+        res.json({users});
     } catch (err) {
         res.status(500).json(err);
     }
@@ -22,7 +22,7 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
 // get user by id[token required]
 export const getUserById = async (req: Request, res: Response): Promise<void> => {
     try {
-        const user: User = await model.show(req.params.id);
+        const user: User = await model.show(parseInt(req.params.id));
         res.json(user);
     } catch (err) {
         res.status(500).json(err);
