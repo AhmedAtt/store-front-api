@@ -9,7 +9,9 @@
     "test": "ENV=test && db-migrate --env test reset  && npx tsc && db-migrate --env test up && jasmine && db-migrate db:drop test",
     "create-test-db": "db-migrate --config database_create.json db:create store_front_test",
     "create-dev-db": "db-migrate --config database_create.json db:create store_front",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "lint": "eslint --ignore-path .eslintignore . --ext .js,.ts .",
+    "prettier": "prettier --config .prettierrc.json src --write"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +35,11 @@
     "@types/jsonwebtoken": "^9.0.1",
     "@types/pg": "^8.6.6",
     "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "jasmine": "^4.5.0",
     "jasmine-spec-reporter": "^7.0.0",
     "jasmine-ts": "^0.4.0",

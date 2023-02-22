@@ -1,10 +1,10 @@
-import express from "express";
+import express from 'express';
 import {
-    getAllProducts,
-    getProductById,
-    createProduct,
-} from "../handlers/products.handler";
-import {authorize} from "../middleware/auth";
+  getAllProducts,
+  getProductById,
+  createProduct,
+} from '../handlers/products.handler';
+import { authorize } from '../middleware/auth';
 
 const router = express.Router();
 
